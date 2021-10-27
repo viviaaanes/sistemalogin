@@ -1,0 +1,55 @@
+.form-login {
+    height: 100vh;
+}
+
+div.row.justify-content-center {
+    color: rgb(116, 119, 122);
+}
+
+div.card {
+    border-color: rgb(255, 95, 3);
+}
+
+h5 {
+    color: rgb(5, 0, 0);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    margin-left: 20px;
+    color: rgb(5, 0, 0);
+    font-weight: 400;
+}
+
+input {
+    border-radius: 24px 4px;
+    border-color: rgb(255, 95, 3);
+}
+
+input.alert {
+    border-radius: 24px 4px;
+    border-color: rgb(255, 95, 3);
+}
+
+div.alert.alert-danger {
+    margin-top: auto;
+    border-radius: 24px 4px;
+}
+
+svg.bi.bi-person {
+    margin-bottom: 4px;
+}
+
+svg.bi.bi-lock {
+    margin-bottom: 6px;
+}
+
+button.btn {
+    margin-bottom: 20px;
+    border-radius: 24px 4px;
+    background-color: rgb(255, 95, 3);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}

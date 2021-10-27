@@ -1,0 +1,18 @@
+nav {
+    background-color: rgb(248, 115, 38);
+    display: flex;
+}
+
+svg.bi.bi-people {
+    margin-bottom: 6px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+
+li:hover {
+    background-color: rgba(241, 233, 227, 0.185);
+    border-radius: 14px 4px;
+}

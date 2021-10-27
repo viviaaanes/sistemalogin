@@ -1,0 +1,56 @@
+<form class="form-login d-flex align-items-center justify-content-center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <!-- "Formulário utilizando o controle do angular (ngForm),
+          evento do (ngSubmit) com o event biding "()"
+          passando o próprio formulário através da variável local (#f)"
+         "Variável f sendo passada no onSubmit e no component.ts está sendo recebida"-->
+    <div class="row justify-content-center">
+        <div class="card" style="width: 24rem;">
+            <div class="card-body">
+                <h5>Faça Login para continuar</h5>
+
+
+                <div class="form-group">
+                    <label for="email"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    </svg> Usuário:</label>
+                    <div class="row justify-content-center">
+                        <input type="email" style="width: 20rem;" class="form-control justify-content-center" id="email" name="email" placeholder="email@email.com" ngModel required email #email="ngModel" [class.is-invalid]="!email.valid && email.touched" />
+                        <!--"ngModel utilizado para associar o campo input com os valores do ngForm utilizando a propriedade (name)"
+                        "required" para validação de campo obrigatório do email e email pra validação do email, só funciona se ele estiver completo."
+                        "#email="ngModel" criei uma variável local #email e associei o ngModel a ela"
+                        "o [class.is-invalid] é utilizado junto com o bootstrap da div da mensagem para o alert funcionar no campo email"-->
+                        <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert" style="width: 20rem;">Email inválido.</div>
+                        <!--"Ngif passa a mensagem de obrigatorio quando o email não á valido e quando o campo foi tocado mas nao usado."
+                        "Alert no campo email"-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+                    </svg> Senha:</label>
+                    <div class="row justify-content-center">
+                        <input type="password" style="width: 20rem;" class="form-control justify-content-center" id="senha" name="senha" ngModel required #senha="ngModel" [class.is-invalid]="!senha.valid && senha.touched" />
+                        <!--"ngModel utilizado para associar o campo input com os valores do ngForm utilizando a propriedade (name)"
+                        "required utilizado para validação obrigatória do campo senha"
+                        "#senha="ngModel" criei uma variável local #senha e associei o ngModel a ela"
+                        "o [class.is-invalid] é utilizado junto com o bootstrap da div da mensagem para fazer o alert funcionar no campo senha"-->
+                        <div *ngIf="!senha.valid && senha.touched" class="alert alert-danger" role="alert" style="width: 20rem;">Senha Obrigatória.</div>
+                        <!--"Ngif passa a mensagem de obrigatorio quando o email não á valido e quando o campo foi tocado mas nao usado."
+                        "Alert no campo senha"-->
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn" type="submit" style="width: 20rem;" [disabled]="!f.valid">Entrar</button>
+                    <!--disabled propriedade do html para desabilitar botoes,
+                    property binding com a variável local F que representa o formulario.-->
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</form>
